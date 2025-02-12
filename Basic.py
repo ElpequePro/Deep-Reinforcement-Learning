@@ -3,21 +3,24 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env.dummy_vec_env import DummyVecEnv
 from stable_baselines3.common.evaluation import evaluate_policy
 
-train_env = gym.make("LunarLander-v3")
-train_env = DummyVecEnv([lambda: train_env])
+env_name = "CarRacing-v3"
 
-model = PPO('MlpPolicy', train_env, verbose=1)
-model.learn(total_timesteps=10000)
+training_env = gym.make(env_name)
+training_env = DummyVecEnv([lambda: training_env])
 
-eval_env = gym.make("LunarLander-v3", render_mode='human')
+model = PPO('MlpPolicy', training_env, verbose=1)
+model.learn(total_timesteps=250000)
+
+save_name = 'PPO_Model_CarRacing-v3_250k' 
+model.save(save_name)
+
+training_env.close()
+
+eval_env = gym.make(env_name, render_mode='human')
 eval_env = DummyVecEnv([lambda: eval_env])
+
+model = PPO.load(save_name, eval_env)
 
 evaluate_policy(model, eval_env, n_eval_episodes=10, render=True)
 
-model.save('PPO_Model_LunarLander')
-
-train_env.close()
 eval_env.close()
-
-del model
-model = PPO.load('PPO_Model_LunarLander', eval_env)
