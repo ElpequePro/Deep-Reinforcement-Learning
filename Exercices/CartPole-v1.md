@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 - **numpy**. It provides support for arrays, matrices, and a wide range of mathematical functions to operate on these data structures.
 - **torch**. Open-source machine learning library.
   - **nn**. Contains classes and functions to build neural networks in PyTorch.
-  - **optim**. provides various optimization algorithms (like SGD, Adam, etc.) that can be used to update the parameters of neural networks during training.
+  - **optim**. Provides various optimization algorithms (like SGD, Adam, etc.) that can be used to update the parameters of neural networks during training.
 - **matplotlib.pyplot**. It is used for creating static, animated, and interactive visualizations in Python.
 
 ## Create environment
