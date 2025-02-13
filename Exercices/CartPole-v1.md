@@ -33,3 +33,29 @@ import matplotlib.pyplot as plt
 ```
 env = gym.make('CartPole-v1')
 ```
+
+## QNetwork
+
+It it used for ...
+
+```
+# El resto del código sigue igual...
+class QNetwork(nn.Module):
+    def __init__(self, state_size, action_size):
+        super(QNetwork, self).__init__()
+        self.fc1 = nn.Linear(state_size, 64)
+        self.fc2 = nn.Linear(64, 64)
+        self.fc3 = nn.Linear(64, action_size)
+        
+    def forward(self, state):
+        x = torch.relu(self.fc1(state))
+        x = torch.relu(self.fc2(x))
+        return self.fc3(x)
+    
+state_size = env.observation_space.shape[0]
+action_size = env.action_space.n
+
+q_network = QNetwork(state_size, action_size)
+```
+
+...
