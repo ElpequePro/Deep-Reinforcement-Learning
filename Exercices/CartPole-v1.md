@@ -39,7 +39,6 @@ env = gym.make('CartPole-v1')
 It it used for ...
 
 ```
-# El resto del código sigue igual...
 class QNetwork(nn.Module):
     def __init__(self, state_size, action_size):
         super(QNetwork, self).__init__()
