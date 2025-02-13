@@ -22,3 +22,9 @@ import matplotlib.pyplot as plt
   - nn: ...
   - optim: ...
 - matplotlib.pyplot: ...
+
+## Create environment
+
+```
+env = gym.make('CartPole-v1')
+```
