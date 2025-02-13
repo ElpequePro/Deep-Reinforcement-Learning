@@ -4,6 +4,11 @@
   <img src="img/default.png" />
 </p>
 
+## Installation
+
+```
+pip install gymnasium numpy torch matplotlib
+```
 
 ## Import
 
