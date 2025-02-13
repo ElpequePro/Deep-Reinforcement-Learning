@@ -95,7 +95,7 @@ class DQNAgent:
 
 agent = DQNAgent(state_size, action_size)
 
-num_episodes = 1000
+num_episodes = 5000
 batch_size = 32
 update_target_every = 10
 
@@ -132,7 +132,7 @@ plt.ylabel("Recompensa")
 plt.title("Recompensa por episodio")
 plt.show()
 
-torch.save(agent, 'Exercices/DQNAgent_CartPole-v1_1k')
+torch.save(agent, 'Exercices/DQNAgent_CartPole-v1_5k')
 
 # Evaluación (con renderizado)
 num_eval_episodes = 10
