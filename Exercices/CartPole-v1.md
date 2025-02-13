@@ -1,5 +1,10 @@
 # CartPole-v1
 
+<p align="center">
+  <img src="img/default.png" />
+</p>
+
+
 ## Import
 
 ```
