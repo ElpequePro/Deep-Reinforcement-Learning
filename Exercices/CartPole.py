@@ -132,7 +132,7 @@ plt.ylabel("Recompensa")
 plt.title("Recompensa por episodio")
 plt.show()
 
-torch.save(agent, 'DQNAgent_CartPole-v1_1k')
+torch.save(agent, 'Exercices/DQNAgent_CartPole-v1_1k')
 
 # Evaluación (con renderizado)
 num_eval_episodes = 10
