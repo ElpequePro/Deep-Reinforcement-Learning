@@ -55,4 +55,34 @@ action_size = env.action_space.n
 q_network = QNetwork(state_size, action_size)
 ```
 
-Primero se define la clase ``class QNetwork(nn.Module)``
+Definimos la clase `class QNetwork(nn.Module)`.
+
+### Constructor
+
+Creamos el constructor `def __init__(self, state_size, action_size)` y añadimos las capas:
+```
+self.fc1 = nn.Linear(state_size, 64)
+self.fc2 = nn.Linear(64, 64)
+self.fc3 = nn.Linear(64, action_size)
+```
+El número que hay dentro de los paréntesis son las neuronas. En este ejercico con 64 o 32 está bien.
+
+Seria como la siguiente imagen, pero en este caso tenemos solo tres capas:
+
+- **fc1**. Capa del input, toma el `state_size` y lo mapea a 64 unidades. El `state_size` define:
+  - **0**. Posición del Cart
+  - **1**. Velocidad del Cart
+  - **2**. Ángulo del Pole
+  - **3**. Velocidad angular del Pole (velocidad con la que "cae" el Pole)
+- **fc2**. Capa oculta, toma las 64 unidades anteriores y los mapea en otras 64 unidades.
+- **fc3**. Capa del output, toma las 64 unidades anteriores y las mapea al tamaño del `action_size`. El `action_size` define:
+  - **0**. Moverse a la izquierda
+  - **1**. Moverse a la derecha
+
+<p align='center'>
+  <img src='https://chatgpt-farsi.com/wp-content/uploads/2023/08/5.png'>
+</p>
+
+[Más información...](https://gymnasium.farama.org/environments/classic_control/cart_pole/)
+
+### Forward

@@ -95,7 +95,7 @@ class DQNAgent:
 
 agent = DQNAgent(state_size, action_size)
 
-num_episodes = 5000
+num_episodes = 500
 batch_size = 32
 update_target_every = 10
 
